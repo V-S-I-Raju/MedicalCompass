@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="7style.css">
+</head>
+<body>
+    
+    <nav>
+        <img id="toggle" src="images/logo1.jpg">
+        <h1> MedicalCompass </h1>
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html" target="_blank">Home</a></li>
+                <li><a href="4about.html" target="_blank">About</a></li>
+                <li><a href="2directory.html" target="_blank">Directory</a></li>
+                <li><a href="5contact.html" target="_blank">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Part -->
+
+    <div class="search">
+    <h2 id="main-subheading">Search Here!</h2>
+    <input type="text" id="myInput" placeholder="Search Name..." onkeyup="searchfun()">
+</div>
+
+
+    <div class="table-container">
+        <table class="doctor-schedule" id="myTable">
+            <caption>TIMING OF VISITING DOCTORS AT B.C.ROY TECHNOLOGY HOSPITAL</caption>
+            <thead>
+                <tr>
+                    <th>NAME OF THE CONSULTANT</th>
+                    <th>SPECIALITY</th>
+                    <th>DAYS</th>
+                    <th>TIMINGS</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>ARCHANA SAHA</td>
+                    <td>DERMATOLOGIST</td>
+                    <td>MON</td>
+                    <td>5 P.M. to 7 P.M.</td>
+                </tr>
+                <tr>
+                    <td>ARCHANA SAHA</td>
+                    <td>DERMATOLOGIST</td>
+                    <td>THUR</td>
+                    <td>5 P.M. to 8 P.M.</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const searchfun = () =>{
+            let filter = document.getElementById('myInput').value.toUpperCase();
+            let myTable = document.getElementById('myTable');
+            let tr = myTable.getElementsByTagName('tr');
+    
+            for(var i=0; i<tr.length; i++){
+                let td = tr[i].getElementsByTagName('td')[0];
+    
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+    
+                    if(textvalue.toUpperCase().indexOf(filter) > -1){
+                        tr[i].style.display = "";
+                        
+                    }else{
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+        <script src="togglescript.js"></script>
+</body>
+</html>

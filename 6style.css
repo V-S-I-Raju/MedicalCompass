@@ -1,0 +1,157 @@
+body {
+    font-family: cursive;
+}
+
+/*Nav Bar*/
+
+nav{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 1vw 1vw;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    border-style: solid;
+    border-color: #50C878;
+}
+
+nav img{
+    width: 80px;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+nav h1{
+    color: #50C878;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+nav .navigation ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .navigation ul li{
+    list-style: none;
+    margin-left: 50px;
+    align-items: flex-end;
+}
+
+nav .navigation ul li a{
+    text-decoration: none;
+    color: #50C878;
+    font-size: 18px;
+    font-weight: 500;
+}
+nav .navigation ul li a:hover{
+    color: salmon;
+}
+
+/* Home */
+
+/* Table Styles */
+.doctor-schedule {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.doctor-schedule caption {
+    text-align: center;
+    color: #333;
+    padding: 16px;
+    margin: 0;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.doctor-schedule th,
+.doctor-schedule td {
+    border: 1px solid black;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.doctor-schedule thead {
+    background-color: #0056b3;
+    color: white;
+}
+
+.doctor-schedule tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.doctor-schedule tbody tr:hover {
+    background-color: #e0e0e0;
+}
+
+.doctor-schedule td:first-child {
+    text-align: center;
+}
+
+/* Media Query - For Screens Shorter than Desktop (Tablets and Phones) */
+@media only screen and (max-width: 1020px) {
+
+    /*Nav Bar and Toggle*/
+  
+    nav {
+        flex-direction: row; /* To Ensure logo and title are on the same line */
+        width: fit-content;
+    }
+
+    nav #toggle {
+        display: block; /* To Show the toggle (logo) on smaller screens */
+        width: 40px;
+    }
+  
+      nav h1 {
+          margin-left: 10px; /* To Add some space from the toggle */
+          font-size: 1.2em;
+      }
+  
+      nav .navigation {
+          position: absolute;
+          top: 60px; /* Below the main nav */
+          left: 0;
+          width: 100%;
+          background-color: white;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+          display: none; /* Initially hidden */
+      }
+  
+      nav .navigation.active {
+          display: block; /* Shown when toggled */
+          width: fit-content;
+      }
+  
+      nav .navigation ul {
+          flex-direction: column; /* Stack links vertically */
+      }
+  
+      nav .navigation ul li {
+          margin-left: 0;
+          padding: 15px 20px;
+          text-align: center;
+          border-bottom: 1px solid #eee;
+      }
+  
+      nav .navigation ul li:last-child {
+          border-bottom: none;
+      }
+  
+      /*Remaining Page*/
+     
+    .table-container{
+        font-size: 0.7em;
+    }
+
+  
+  }
